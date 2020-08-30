@@ -56,6 +56,7 @@ from platforms import util as platforms_util
 
 import mem_util
 import node_time_util
+import mem_draw_util
 
 
 _DEFAULT_NUM_BATCHES = 100
@@ -708,7 +709,11 @@ def benchmark_one_step(sess,
 
   if step == _NUM_STEPS_TO_PROFILE - 1:
     if params.lognode_time:
-      node_time_util.get_node_time(run_metadata)
+      # node_time_util.get_node_time(run_metadata)
+      mem_draw_util.draw_alloc_infos(net=params.model,
+                                     batch_size=params.batch_size,
+                                     step_id=step,
+                                     run_metadata=run_metadata)
     # GigaConv = 1 << 30
     # peak_memory_usage = float(mem_util.peak_memory(run_metadata)["/gpu:0"]) / GigaConv
     # log_str = 'Peak memory usage is %f GB' % peak_memory_usage

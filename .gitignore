@@ -3,3 +3,9 @@
 *.sh
 scripts/tf_cnn_benchmarks/scripts/**
 scripts/tf_cnn_benchmarks/scripts/mem_log*/
+scripts/tf_cnn_benchmarks/logs*/*
+scripts/tf_cnn_benchmarks/*log*
+scripts/tf_cnn_benchmarks/graph/*
+scripts/tf_cnn_benchmarks/figures/*
+*.log
+*.prof
